@@ -4,7 +4,7 @@ app = Flask(__name__)
 
 @app.route('/helloesp', methods = ['GET'])
 def helloHandler():
-    return 'Hello ESP8266, from Flask'
+    response =  'Hello ESP8266, from Flask'
 
 
 @app.route('/')
