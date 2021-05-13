@@ -1,20 +1,25 @@
-from flask import Flask, redirect, url_for, request
+from flask import Flask , request
+from flask.json import jsonify
+
 app = Flask(__name__)
+@app.route('/<string:name>')
+def get(name):
+    get_val(name)
+    return {'data': name}
 
-@app.route('/success/<name>')
-def success(name):
-   return 'welcome %s' % name
 
-@app.route('/login',methods = ['POST', 'GET'])
-def login():
-   if request.method == 'POST':
-      user = request.form['nm']
-      return redirect(url_for('success',name = user))
-   else:
-      user = request.args.get('nm')
-      return redirect(url_for('success',name = user))
+
+def  get_val(name):
+    val =name
+    print(val)
+    return None 
+    
+
+
+
 
     
 
 if __name__ == '__main__':
-   app.run(debug = True)
+   app.run(host='192.168.43.112',port='5000',debug=True)
+
