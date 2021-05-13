@@ -5,7 +5,7 @@ app = Flask(__name__)
 @app.route('/<string:name>')
 def get(name):
     get_val(name)
-    return {'data': name}
+    return 'name'
 
 
 
