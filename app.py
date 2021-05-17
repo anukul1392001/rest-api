@@ -21,5 +21,5 @@ def  get_val(name):
     
 
 if __name__ == '__main__':
-   app.run(host='https://rest-api-anukul.herokuapp.com/',port='5000',debug=True)
+   app.run(debug=True)
 
