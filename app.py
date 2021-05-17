@@ -2,10 +2,10 @@ from flask import Flask , request
 from flask.json import jsonify
 
 app = Flask(__name__)
-@app.route('/<string:name>', methods=['POST'])
+@app.route('/<string:name>', methods=['GET'])
 def get(name):
     get_val(name)
-    return 'name'
+    return {'data' : name }
 
 
 
@@ -21,5 +21,5 @@ def  get_val(name):
     
 
 if __name__ == '__main__':
-   app.run(host='192.168.43.112',port='5000',debug=True)
+   app.run(host='https://rest-api-anukul.herokuapp.com/',port='5000',debug=True)
 
