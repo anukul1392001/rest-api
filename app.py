@@ -7,6 +7,9 @@ def get(name):
     get_val(name)
     return {'data' : 'ANSHU' }
 
+@app.route('/')
+def login():
+    return render_template("index.html")
 
 
 def  get_val(name):
