@@ -5,7 +5,7 @@ from flask.json import jsonify
 app = Flask(__name__)
 @app.route('/veg', methods=['GET'])
 def get():
-    return render_template
+    return "PointBlank<.>"
 
 
 @app.route('/', methods=['GET'])
