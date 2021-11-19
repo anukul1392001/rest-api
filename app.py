@@ -29,7 +29,7 @@ def update_record():
     print(record['Value'])
     print(url_for('update_record'))
 
-    return  record#jsonify(record)
+    return  "Success" #record jsonify(record)
 
 
 if __name__ == '__main__':
