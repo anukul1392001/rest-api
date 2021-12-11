@@ -22,7 +22,7 @@ response = {
 
 @app.route('/post', methods=['POST'])
 def update_record():
-    record = json.loads(request.data)
+    #record = json.loads(request.data)
 
     return  "Success" #record jsonify(record)
 
