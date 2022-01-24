@@ -24,7 +24,7 @@ response = {
 def update_record():
     record = json.loads(request.data)
 
-    return record jsonify(record)
+    return jsonify(record)
 
 
 if __name__ == '__main__':
