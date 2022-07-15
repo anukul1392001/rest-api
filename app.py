@@ -1,30 +1,24 @@
-import json
-from flask import Flask, request ,url_for
-from flask.json import jsonify
+from flask import Flask, render_template , request
+from flask import url_for ,jsonify
 
-app = Flask(__name__)
+
+app = Flask(__name__, template_folder='templates')
 @app.route('/veg', methods=['GET'])
 def get():
-    return "PointBlank<.>"
+    arg = request.args
+    data = arg.get('name')
+    return render_template('index.html',name = data)
 
 
 @app.route('/', methods=['GET'])
 def query_records():
     name = request.args.get('name')
     print(name)
-    print(url_for('query_records'))
-
     return jsonify(name)
 
 response = {
     'Success' : 'True'
 }
-
-@app.route('/post', methods=['POST'])
-def update_record():
-    record = json.loads(request.data)
-
-    return jsonify(record)
 
 
 if __name__ == '__main__':
